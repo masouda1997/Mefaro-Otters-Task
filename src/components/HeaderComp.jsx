@@ -6,7 +6,7 @@ import { BsChevronLeft } from "react-icons/bs";
 
 export const HeaderComp = () => {
 	return (
-		<section className="bg-white z-50 w-[100vw] flex px-10 py-2 mb-[3px] justify-between">
+		<section className="bg-white z-50 absolute top-0 w-[100vw] flex px-10 py-2 mb-[3px] justify-between">
 			<div className="flex items-center gap-2">
 				<RiFileList2Line className="text-[18px]" />
 				<span className="text-[14px]">بلاگ</span>

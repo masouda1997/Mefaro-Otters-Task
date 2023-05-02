@@ -17,7 +17,8 @@
     color:#1d9399
   }
   body{
+    overflow: hidden;
     direction: rtl;
-    @apply flex justify-center items-center box-border p-0 m-0 bg-[#f6f6f6]
+    @apply flex justify-center items-center box-border p-0 m-0 max-w-[700px] m-auto bg-primary
   }
  }
