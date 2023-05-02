@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+                
+
 @layer base {
-   body{
-     @apply  box-border p-0 m-0 bg-[#fafafa]
-   }
+ 
+  a{
+    color:#1d9399
+  }
+  body{
+    direction: rtl;
+    @apply flex justify-center items-center box-border p-0 m-0 bg-[#f6f6f6]
+  }
  }
