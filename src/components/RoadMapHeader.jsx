@@ -7,7 +7,7 @@ export const RoadMapHeader = () => {
 			<div className="absolute top-[-390px] w-[700px] h-[800px] z-10 left-1/2 transform -translate-x-1/2 rounded-[50%] bg-white" />
 			<div className="absolute bg-[#fb9d00] z-[0] w-[700px] h-[700px] top-[-330px]  left-1/3 transform -translate-x-1/2 rounded-[50%]  " />
 
-			<div className="flex flex-col gap-3 absolute z-50 left-1/2 top-[30%] transform -translate-x-1/2 -translate-y-1/2">
+			<div className="flex flex-col gap-3 absolute z-50 left-1/2 top-[25vh] transform -translate-x-1/2 -translate-y-1/2">
 				<p className=" text-center text-[24px] font-bold text-[#3A3A3A] ">
 					نقشه راه یادگیری
 					<br /> مهارت آیلتس
