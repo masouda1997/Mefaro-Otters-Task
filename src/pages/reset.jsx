@@ -1,5 +1,6 @@
 import React from "react";
+import { PageContainer } from "../layout/pageContainer.layout";
 
 export const Reset = () => {
-	return <div>this is reset</div>;
+	return <PageContainer></PageContainer>;
 };

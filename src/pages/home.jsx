@@ -1,5 +1,10 @@
 import React from "react";
+import { PageContainer } from "../layout/pageContainer.layout";
 
 export const RoadMap = () => {
-	return <div> مسیر یادگیری </div>;
+	return (
+		<PageContainer>
+			<h1>road map</h1>
+		</PageContainer>
+	);
 };
