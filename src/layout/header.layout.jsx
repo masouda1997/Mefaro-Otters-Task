@@ -1,9 +1,12 @@
 import React from "react";
-import mefaro from "../assets/images/Mefaro.png";
-import { CiUser } from "react-icons/ci";
-import { RiFileList2Line } from "react-icons/ri";
-import { BsChevronLeft } from "react-icons/bs";
+import { HeaderComp, NavBar } from "../components";
 
-export const Header = () => {
-	return <></>;
+const Header = () => {
+	return (
+		<>
+			<HeaderComp />
+			<NavBar />
+		</>
+	);
 };
+export default Header;

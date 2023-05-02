@@ -1,5 +1,4 @@
 import React from "react";
-import "../index.css";
 import mefaro from "../assets/images/Mefaro.png";
 
 export const Login = () => {

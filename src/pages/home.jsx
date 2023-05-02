@@ -1,5 +1,5 @@
 import React from "react";
-import { PageContainer } from "../layout/pageContainer.layout";
+import PageContainer from "../layout/pageContainer.layout";
 
 export const RoadMap = () => {
 	return (

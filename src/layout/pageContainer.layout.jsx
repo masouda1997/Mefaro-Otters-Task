@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "./header.layout";
+import Header from "./header.layout";
 
-export const PageContainer = (props) => {
+const PageContainer = (props) => {
 	return (
 		<>
 			<Header />
@@ -9,3 +9,5 @@ export const PageContainer = (props) => {
 		</>
 	);
 };
+
+export default PageContainer;
