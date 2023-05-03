@@ -6,7 +6,7 @@ import { BsSignpost2 } from "react-icons/bs";
 
 const NavBar = () => {
 	return (
-		<ul className="absolute top-12 w-screen bg-white z-50 flex gap-6 text-[14px] px-10 py-1">
+		<ul className="absolute top-12 w-[700px] bg-white z-50 flex gap-6 text-[14px] px-10 py-1">
 			<li className="flex items-center gap-2">
 				<SlHome />
 				<span>خانه </span>

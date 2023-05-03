@@ -9,7 +9,7 @@ import Ptag from "../components/base/Ptag";
 
 export const RoadMap = () => {
 	return (
-		<PageContainer className="relative  overflow-y-auto">
+		<PageContainer className="relative  overflow-y-auto overflow-x-hidden">
 			<RoadMapHeader />
 
 			<div className="mx-5 my-16 flex flex-col gap-7">
