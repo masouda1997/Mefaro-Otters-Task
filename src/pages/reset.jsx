@@ -15,7 +15,7 @@ export const Reset = () => {
 					<Input placeholder={"تکرار رمز عبور"} type={"text"} />
 				</div>
 				<UnitButton className="bg-primary text-white absolute bottom-6 w-[40%] transform left-1/2 -translate-x-1/2">
-					gis تایید
+					تایید
 				</UnitButton>
 			</form>
 		</PageContainer>
