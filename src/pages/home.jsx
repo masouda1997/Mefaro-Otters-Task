@@ -3,16 +3,17 @@ import PageContainer from "../layout/pageContainer.layout";
 import { RoadMapHeader } from "../components";
 import UnitButton from "../components/base/UnitButton";
 import Article from "../components/Article";
+import Sources from "../components/Sources";
 
 export const RoadMap = () => {
 	return (
-		<PageContainer className="relative">
+		<PageContainer className="relative  overflow-y-auto">
 			<RoadMapHeader />
 
 			<div className="mx-5 mt-16 flex flex-col gap-7 bg-red-800">
 				<div className="bg-white w-full p-5 ">
 					<h3 className="text-[#005efb] font-bold mb-2">
-						توصیه مربی{" "}
+						توصیه مربی
 					</h3>
 					<p className="text-sm">
 						سلام <br />
@@ -32,10 +33,36 @@ export const RoadMap = () => {
 						ارتقا اشتراک
 					</UnitButton>
 				</div>
+
 				<UnitButton className="border-4 border-secondary text-white p-3 self-end ">
 					UNITE ONE
 				</UnitButton>
+
 				<Article />
+				<p dir="ltr">
+					skim a text quickly to understand the general idea{" "}
+				</p>
+				<Sources time={"10"} srcNum={"یک"} />
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
 			</div>
 		</PageContainer>
 	);

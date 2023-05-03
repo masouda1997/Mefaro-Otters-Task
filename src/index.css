@@ -19,6 +19,6 @@
   body{
     overflow-x: hidden;
     direction: rtl;
-    @apply flex justify-center items-center box-border p-0 m-0 max-w-[700px] m-auto bg-primary
+    @apply flex justify-center items-center box-border p-0 m-0 max-w-[700px] m-auto 
   }
  }
