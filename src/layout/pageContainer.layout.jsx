@@ -5,7 +5,7 @@ const PageContainer = (props) => {
 	console.log(typeof props.className);
 
 	return (
-		<div className={`${props.className} w-[700px] bg-primary`}>
+		<div className={`${props.className} w-[700px] `}>
 			<Header />
 			<div>{props.children}</div>
 		</div>

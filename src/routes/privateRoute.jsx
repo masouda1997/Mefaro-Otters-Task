@@ -1,8 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 export const PrivateRoutes = () => {
-	const user = JSON.parse(localStorage.getItem("flg"));
+	// const user = JSON.parse(localStorage.getItem("flg"));
+	const user = true;
 	console.log(user);
+
 	// const { token } = useSelector((state) => state.auth);
 
 	return (

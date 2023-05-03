@@ -6,3 +6,4 @@ export * from "./Sources";
 export * from "./base/UnitButton";
 export * from "./base/TextField";
 export * from "./base/Ptag";
+export * from "./base/Input";

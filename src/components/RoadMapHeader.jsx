@@ -14,7 +14,7 @@ export const RoadMapHeader = () => {
 					نقشه راه یادگیری
 					<br /> مهارت آیلتس
 				</p>
-				<div className="w-full h-1 bg-[#CECECE]" />
+				<div className="w-full h-1 bg-[##f6f6f6]" />
 				<p className="text-center text-[24px] font-bold text-[#00109E]">
 					سطح: متوسط <br />
 					تیپ3 متوسط ،ج(c33)
