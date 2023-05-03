@@ -2,7 +2,7 @@ import React from "react";
 
 export const RoadMapHeader = () => {
 	return (
-		<div className="h-[50vh] w-screen overflow-hidden ">
+		<div className="h-[50vh] w-screen overflow-hidden min-h-[410px]">
 			<div className="absolute top-[-390px] w-[690px] h-[750px] z-20 left-1/2 transform -translate-x-1/2 rounded-[50%] bg-gradient-to-r from-[#6bd4da] to-primary   " />
 			<div className="absolute top-[-390px] w-[700px] h-[800px] z-10 left-1/2 transform -translate-x-1/2 rounded-[50%] bg-white" />
 			<div className="absolute bg-[#fb9d00] z-[0] w-[700px] h-[700px] top-[-330px]  left-1/3 transform -translate-x-1/2 rounded-[50%]  " />

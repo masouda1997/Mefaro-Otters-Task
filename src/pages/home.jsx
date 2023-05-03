@@ -2,13 +2,14 @@ import React from "react";
 import PageContainer from "../layout/pageContainer.layout";
 import { RoadMapHeader } from "../components";
 import UnitButton from "../components/base/UnitButton";
+import Article from "../components/Article";
 
 export const RoadMap = () => {
 	return (
-		<PageContainer className="relative overflow-x-hidden overflow-y-auto">
+		<PageContainer className="relative">
 			<RoadMapHeader />
 
-			<div className="mx-5 mt-16 flex flex-col gap-7 overflow-auto">
+			<div className="mx-5 mt-16 flex flex-col gap-7 bg-red-800">
 				<div className="bg-white w-full p-5 ">
 					<h3 className="text-[#005efb] font-bold mb-2">
 						توصیه مربی{" "}
@@ -34,10 +35,7 @@ export const RoadMap = () => {
 				<UnitButton className="border-4 border-secondary text-white p-3 self-end ">
 					UNITE ONE
 				</UnitButton>
-				<span className="text-white self-end text-sm">
-					THE MAN - MADE ENVIRONMENT📌
-				</span>
-				<article>jgugi</article>
+				<Article />
 			</div>
 		</PageContainer>
 	);
