@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import mefaro from "../assets/images/Mefaro.png";
 import UnitButton from "../components/base/UnitButton";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { phoneNumberAction } from "../store";
 
 export const Login = () => {
 	const [num, setNum] = useState("");
@@ -8,6 +11,8 @@ export const Login = () => {
 	const [flag, setFlag] = useState(false);
 	const [notValid, setNotValid] = useState("");
 	const [status, setStatus] = useState("");
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	// const [loading, setLoading] = useState(true);
 	// const [error, setError] = useState(null);
@@ -42,14 +47,16 @@ export const Login = () => {
 			alert(data.message);
 			setNum("");
 			setNotValid("bg-rose-200");
+			console.log("🔸", requestOptions);
 		} else {
 			setReq({ method: "POST", body: formData, redirect: "follow" });
 			setFlag(!flag);
 			setNum("");
 			setNotValid("bg-[#F2F2F2]");
+			dispatch(phoneNumberAction.passPhoneNum({ number: num }));
+			navigate("/submit");
+			console.log("🔸", requestOptions);
 		}
-
-		console.log("🔸", requestOptions);
 	};
 
 	const changeHandler = (e) => {

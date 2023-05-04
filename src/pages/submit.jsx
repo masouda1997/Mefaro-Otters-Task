@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import mefaro from "../assets/images/Mefaro.png";
 import UnitButton from "../components/base/UnitButton";
+import { useSelector } from "react-redux";
 
 export const Submit = () => {
+	const thePhone = useSelector((state) => state.phoneNumber.phoneNum);
+	let starNumber = 0;
+	// Replace("09131071365",Substr("09131071365",4,6),"******")
+	typeof thePhone !== "undefined" && thePhone.length === 0
+		? console.log("empty")
+		: (starNumber = thePhone.number.replace(/.(?=.{4,}$)/g, "*"));
+	console.log(thePhone, starNumber);
+
 	return (
 		<div className="flex w-screen h-screen justify-center items-center bg-[#f6f6f6]">
 			<div className="w-[435px] h-[435px] bg-white ">
@@ -17,7 +26,11 @@ export const Submit = () => {
 
 					<form>
 						<h3 className="mt-[57px] ">
-							کد تایید برای شماره *** پیامک شد .
+							کد تایید برای شماره
+							<span dir="ltr">
+								{starNumber === 0 ? " ________ " : starNumber}
+							</span>
+							پیامک شد .
 						</h3>
 
 						<div
