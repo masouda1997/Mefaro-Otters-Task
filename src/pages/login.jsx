@@ -14,15 +14,9 @@ export const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	// const [loading, setLoading] = useState(true);
-	// const [error, setError] = useState(null);
-	// setDataArry(prv => [...prv, { name: partName, id: Date.now() }])
-
-	// formdata.append("mobile", "user@gmail.com");
-	// 09102642673
-
 	let formData = new FormData();
 	formData.append("mobile", num);
+
 	let [requestOptions, setReq] = useState({
 		method: "POST",
 		redirect: "follow",
@@ -39,6 +33,7 @@ export const Login = () => {
 	}, [flag]);
 
 	const submitHandler = (e) => {
+		console.log(num);
 		let formData = new FormData();
 		formData.append("mobile", num);
 		e.preventDefault();
@@ -47,15 +42,29 @@ export const Login = () => {
 			alert(data.message);
 			setNum("");
 			setNotValid("bg-rose-200");
-			console.log("🔸", requestOptions);
+			console.log(data);
 		} else {
-			setReq({ method: "POST", body: formData, redirect: "follow" });
+			setReq({
+				method: "POST",
+				body: formData,
+				redirect: "follow",
+				// headers: { "Content-type": "application/json", mobile: num },
+			});
+			console.log(requestOptions);
 			setFlag(!flag);
-			setNum("");
 			setNotValid("bg-[#F2F2F2]");
 			dispatch(phoneNumberAction.passPhoneNum({ number: num }));
-			navigate("/submit");
-			console.log("🔸", requestOptions);
+			console.log(data);
+			// localStorage.setItem("token", data.token);
+			setNum("");
+			if (requestOptions.body) {
+				alert(data.data.message);
+				setTimeout(() => {
+					navigate("/submit");
+				}, 1000);
+			}
+
+			// navigate("/submit");
 		}
 	};
 
@@ -86,7 +95,7 @@ export const Login = () => {
 								value={num}
 								onChange={(e) => changeHandler(e)}
 								type="text"
-								className="w-[200px] bg-transparent placeholder-gray-700 placeholder:text-[11px] outline-none "
+								className="w-[200px] bg-transparent text-center placeholder-gray-700 placeholder:text-[11px] outline-none "
 								placeholder="لطفا شماره موبایل یا ایمیل خود را وارد کنید "
 							/>
 						</div>
