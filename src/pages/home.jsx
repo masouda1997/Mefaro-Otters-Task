@@ -6,8 +6,18 @@ import Article from "../components/Article";
 import Sources from "../components/Sources";
 import TextField from "../components/base/TextField";
 import Ptag from "../components/base/Ptag";
+import { useSelector } from "react-redux";
 
 export const RoadMap = () => {
+	const accessKey = useSelector((state) => state.AccessCode.accessCode);
+
+	// just for display greeting messege
+	useEffect(() => {
+		setTimeout(() => {
+			if (accessKey.accessKey) alert(accessKey.accessKey);
+		}, 500);
+	}, []);
+
 	return (
 		<PageContainer className="relative  overflow-y-auto overflow-x-hidden bg-primary">
 			<RoadMapHeader />

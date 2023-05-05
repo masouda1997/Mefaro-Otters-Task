@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Login, Reset, RoadMap, Submit } from "./pages";
+import { Login, Reset, RoadMap, Submit, Profile } from "./pages";
 import { PrivateRoutes, PublicRoutes } from "./routes";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
 					<Route path="/submit" element={<Submit />} />
 				</Route>
 				<Route element={<PrivateRoutes />}>
+					<Route path="/profile" element={<Profile />} />
 					<Route path="/reset" element={<Reset />} />
 				</Route>
 			</Routes>
