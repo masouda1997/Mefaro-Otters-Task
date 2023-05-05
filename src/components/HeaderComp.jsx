@@ -3,6 +3,7 @@ import mefaro from "../assets/images/Mefaro.png";
 import { CiUser } from "react-icons/ci";
 import { RiFileList2Line } from "react-icons/ri";
 import { BsChevronLeft } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const HeaderComp = () => {
 	return (
@@ -18,7 +19,9 @@ export const HeaderComp = () => {
 
 			<div className="flex items-center justify-end gap-3 flex-1">
 				<CiUser />
-				<span className=" text-[14px] ">حساب کاربری </span>
+				<Link to="/login" className=" text-[14px] text-black ">
+					حساب کاربری
+				</Link>
 				<BsChevronLeft />
 			</div>
 		</section>

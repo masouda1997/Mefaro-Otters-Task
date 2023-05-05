@@ -14,8 +14,8 @@ export const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	let formData = new FormData();
-	formData.append("mobile", num);
+	// let formData = new FormData();
+	// formData.append("mobile", num);
 
 	let [requestOptions, setReq] = useState({
 		method: "POST",
@@ -51,7 +51,6 @@ export const Login = () => {
 				// headers: { "Content-type": "application/json", mobile: num },
 			});
 			console.log(requestOptions);
-			setFlag(!flag);
 			setNotValid("bg-[#F2F2F2]");
 			dispatch(phoneNumberAction.passPhoneNum({ number: num }));
 			console.log(data);
@@ -63,6 +62,7 @@ export const Login = () => {
 					navigate("/submit");
 				}, 1000);
 			}
+			setFlag(!flag);
 
 			// navigate("/submit");
 		}

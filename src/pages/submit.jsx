@@ -3,17 +3,20 @@ import mefaro from "../assets/images/Mefaro.png";
 import UnitButton from "../components/base/UnitButton";
 import { useSelector } from "react-redux";
 import decode from "jwt-decode";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Submit = () => {
 	const thePhone = useSelector((state) => state.phoneNumber.phoneNum);
+	const [code, setCode] = useState("");
 	const [data, setData] = useState(null);
-	let formdata = new FormData();
-	formdata.append("mobile", thePhone);
+	const [flag, setFlag] = useState(false);
+	const navigate = useNavigate();
+	let starNumber = 0;
 
-	let requestOptions = {
+	let [requestOptions, setReq] = useState({
 		method: "POST",
 		redirect: "follow",
-	};
+	});
 
 	useEffect(() => {
 		fetch(
@@ -24,19 +27,42 @@ export const Submit = () => {
 			.then((result) => {
 				console.log(result);
 				if (result.token) {
-					localStorage.setItem("token", result.token);
 				}
-
 				return setData(result);
 			})
 			.catch((error) => console.log("error", error));
-	}, []);
+	}, [flag]);
 
+	// ****************************************************************
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		let formData = new FormData();
+		formData.append("mobile", code);
+		if (code === "") {
+			console.log(data);
+			alert(data.errors.code);
+		} else {
+			setReq({
+				method: "POST",
+				body: formData,
+				redirect: "follow",
+				// headers: { "Content-type": "application/json", mobile: num },
+			});
+			localStorage.setItem("token", data.token);
+			navigate("/");
+		}
+		setFlag(!flag);
+		// const fromData
+	};
+
+	const changeHandler = (e) => {
+		setCode(e.target.value);
+	};
 	// console.log(data);
 	// localStorage.setItem("token", data.token);
 	// const x = decode(data.token);
 	// console.log(x);
-	let starNumber = 0;
 	typeof thePhone !== "undefined" && thePhone.length === 0
 		? console.log("empty")
 		: (starNumber = thePhone.number.replace(/.(?=.{4,}$)/g, "*"));
@@ -54,7 +80,7 @@ export const Submit = () => {
 						کد تایید را وارد کنید
 					</h1>
 
-					<form>
+					<form onSubmit={(e) => submitHandler(e)}>
 						<h3 className="mt-[57px] ">
 							کد تایید برای شماره
 							<span dir="ltr">
@@ -67,6 +93,7 @@ export const Submit = () => {
 							className={` w-full bg-[#F2F2F2] p-3 flex justify-center mt-6 rounded-[8px] `}
 						>
 							<input
+								onChange={(e) => changeHandler(e)}
 								dir="ltr"
 								type="text"
 								className="w-[200px] text-center bg-transparent placeholder-gray-700 outline-none "
