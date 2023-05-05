@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import mefaro from "../assets/images/Mefaro.png";
 import UnitButton from "../components/base/UnitButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import decode from "jwt-decode";
 import { Navigate, useNavigate } from "react-router-dom";
+import { accessCodeAction } from "../store";
 
 export const Submit = () => {
 	const thePhone = useSelector((state) => state.phoneNumber.phoneNum);
@@ -11,6 +12,7 @@ export const Submit = () => {
 	const [data, setData] = useState(null);
 	const [flag, setFlag] = useState(false);
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	let starNumber = 0;
 
 	let [requestOptions, setReq] = useState({
@@ -50,7 +52,13 @@ export const Submit = () => {
 				// headers: { "Content-type": "application/json", mobile: num },
 			});
 			localStorage.setItem("token", data.token);
-			navigate("/");
+			// dispatch(phoneNumberAction.passPhoneNum({ number: num }));
+			if (data.token) {
+				dispatch(
+					accessCodeAction.passAccessNum({ accessKey: data.message })
+				);
+				navigate("/");
+			}
 		}
 		setFlag(!flag);
 		// const fromData
