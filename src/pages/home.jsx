@@ -10,17 +10,33 @@ import { useSelector } from "react-redux";
 
 export const RoadMap = () => {
 	const accessKey = useSelector((state) => state.AccessCode.accessCode);
+	const [data, setData] = useState([]);
 
 	// just for display greeting messege
 	useEffect(() => {
 		setTimeout(() => {
 			if (accessKey.accessKey) alert(accessKey.accessKey);
 		}, 500);
+		const requestOptions = {
+			method: "GET",
+			redirect: "follow",
+		};
+
+		fetch(
+			"https://4d105af1-ad0b-4759-96f8-eabf65bffd23.mock.pstmn.io/api/student-panel/my-skills/6a68afbc-4e8b-4639-bd65-f0dc462e5219/content",
+			requestOptions
+		)
+			.then((response) => response.json())
+			.then((result) => {
+				setData(result);
+				console.log(result[0]);
+			})
+			.catch((error) => console.log("error", error));
 	}, []);
 
 	return (
 		<PageContainer className="relative  overflow-y-auto overflow-x-hidden bg-primary">
-			<RoadMapHeader />
+			<RoadMapHeader title="تیپ 2 پایه، الف (A21)" />
 
 			<div className="mx-5 my-16 flex flex-col gap-7">
 				<div className="bg-white w-full p-5 ">
@@ -47,7 +63,7 @@ export const RoadMap = () => {
 				</div>
 
 				<UnitButton className="border-4 border-secondary text-white p-3 self-end ">
-					UNITE ONE
+					{"UNITE ONE"}
 				</UnitButton>
 
 				<Article />

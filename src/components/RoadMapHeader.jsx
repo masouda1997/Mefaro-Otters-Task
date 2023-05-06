@@ -1,6 +1,6 @@
 import React from "react";
 
-export const RoadMapHeader = () => {
+export const RoadMapHeader = (props) => {
 	return (
 		<div className="h-[50vh] w-screen overflow-hidden min-h-[410px]">
 			<div className="absolute top-[-390px] w-[690px] h-[750px] z-20 left-1/2 transform -translate-x-1/2 rounded-[50%] bg-gradient-to-r from-[#6bd4da] to-primary" />
@@ -16,8 +16,7 @@ export const RoadMapHeader = () => {
 				</p>
 				<div className="w-full h-1 bg-[##f6f6f6]" />
 				<p className="text-center text-[24px] font-bold text-[#00109E]">
-					سطح: متوسط <br />
-					تیپ3 متوسط ،ج(c33)
+					{props.title ? props.title : "hi"}
 				</p>
 			</div>
 		</div>
