@@ -51,7 +51,8 @@ export const Submit = () => {
 				redirect: "follow",
 				// headers: { "Content-type": "application/json", mobile: num },
 			});
-			localStorage.setItem("token", data.token);
+
+			localStorage.setItem("token", JSON.stringify(data.token));
 			// dispatch(phoneNumberAction.passPhoneNum({ number: num }));
 			if (data.token) {
 				dispatch(
